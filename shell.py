@@ -82,5 +82,54 @@ class Terminal:
             return self.cmd_uptime(args)
         else:
             return self.execute_external(command, args)
+        
+    def cmd_exit(self, args):
+        """
+        Exit from terminal
+        """
+        exit_code = 0
+        if args:
+            try:
+                exit_code = int(args[0])
+            except:
+                print("exit: need number")
+                return True
+        
+        print("See you again!")
+        sys.exit(exit_code)
+        return False
     
-   
+    def run(self):
+        """
+        Main loop of terminal
+        """
+        print("=== Terminal ===")
+        print("Type 'help' for reference")
+        print()
+        
+        while True:
+            try:
+                prompt = self.get_prompt()
+                command = input(prompt)
+                
+                if not self.execute_command(command):
+                    break
+                    
+            except KeyboardInterrupt:
+                print("\n^C")
+                continue
+            except EOFError:
+                print("\nExit...")
+                break
+    
+def main():
+    """Start Terminal"""
+    try:
+        terminal = Terminal()
+        terminal.run()
+    except Exception as e:
+        print(f"Error: {e}")
+
+
+if __name__ == "__main__":
+    main()
