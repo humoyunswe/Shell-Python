@@ -99,6 +99,28 @@ class Terminal:
         sys.exit(exit_code)
         return False
     
+    def cmd_cd(self, args):
+        """
+        Changes directory
+        """
+        if not args:
+            new_dir = os.path.expanduser('~')
+        else:
+            new_dir = args[0]
+            
+        if not os.path.isabs(new_dir):
+            new_dir = os.path.join(self.current_dir, new_dir)
+        
+        new_dir = os.path.normpath(new_dir)
+        
+        if os.path.isdir(new_dir):
+            self.current_dir = new_dir
+            os.chdir(new_dir)
+        else:
+            print(f"cd: {new_dir}: Not found yet")
+        
+        return True
+    
     def run(self):
         """
         Main loop of terminal
