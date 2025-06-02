@@ -130,6 +130,13 @@ class Terminal:
         print(self.current_dir)
         return True
     
+    def cmd_echo(self, args):
+        """
+        Withdraws text
+        """
+        print(' '.join(args))
+        return True
+    
     def run(self):
         """
         Main loop of terminal
