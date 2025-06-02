@@ -15,6 +15,8 @@ class Terminal:
         """
         Makes beautiful prompt:
         Like this: -> humoyunswe@terminal:~/Desktop/Projects/Shell-Python$ 
+
+        display_path -> will seen /home/user/Desktop → ~/Desktop like that format.
         """
         user = os.getenv('USER', os.getenv('USERNAME', 'user'))
         hostname = 'terminal'
@@ -119,6 +121,13 @@ class Terminal:
         else:
             print(f"cd: {new_dir}: Not found yet")
         
+        return True
+    
+    def cmd_pwd(self, args):
+        """
+        Shows current path
+        """
+        print(self.current_dir)
         return True
     
     def run(self):

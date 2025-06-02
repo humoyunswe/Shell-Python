@@ -35,7 +35,7 @@ A lightweight, cross-platform terminal emulator built from scratch in Python. Fe
 
 2. **Run the terminal**
    ```bash
-   python terminal.py
+   python shell.py
    ```
 
 3. **Start using commands**
@@ -80,14 +80,14 @@ A lightweight, cross-platform terminal emulator built from scratch in Python. Fe
 
 ### Basic Navigation
 ```bash
-user@terminal:~$ pwd
+humoyunswe@terminal:~$ pwd
 /home/user
 
-user@terminal:~$ ls
+humoyunswe@terminal:~$ ls
 Documents  Downloads  Pictures
 
-user@terminal:~$ cd Documents
-user@terminal:~/Documents$ pwd
+humoyunswe@terminal:~$ cd Documents
+humoyunswe@terminal:~/Documents$ pwd
 /home/user/Documents
 ```
 
