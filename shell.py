@@ -137,6 +137,27 @@ class Terminal:
         print(' '.join(args))
         return True
     
+    def cmd_type(self, args):
+        """
+        Shows type of command
+        """
+        if not args:
+            print("type: need name of cammand")
+            return True
+            
+        command = args[0]
+        builtin_commands = ['exit', 'cd', 'pwd', 'echo', 'type', 'help', 
+                           'history', 'clear', 'ls', 'cat', 'mkdir', 
+                           'touch', 'rm', 'cp', 'date', 'whoami', 'uptime']
+        
+        if command in builtin_commands:
+            print(f"{command} - inner command")
+    
+        else:
+            print(f"{command}: not found")
+        
+        return True
+    
     def run(self):
         """
         Main loop of terminal
