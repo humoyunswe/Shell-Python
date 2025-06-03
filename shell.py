@@ -181,6 +181,31 @@ class Terminal:
         print("  exit [code]   - Exit")
         return True
     
+    def cmd_history(self, args):
+        """
+        Shows history of command
+
+        For instance:
+        If you have typed:
+        - cd Desktop,
+        - pwd,
+        - echo Hello World!
+
+        You will take response in that format:
+        1 cd Desktop
+        2 pwd
+        3 echo Hello World!
+        """
+        if not self.history:
+            print("History is empty!")
+            return True
+            
+        recent = self.history[-20:]
+        for i, cmd in enumerate(recent, 1):
+            print(f"{i:3d}  {cmd}")
+        
+        return True
+    
     def run(self):
         """
         Main loop of terminal

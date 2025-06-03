@@ -2,7 +2,7 @@
 
 A lightweight, cross-platform terminal emulator built from scratch in Python. Features 17+ built-in commands, command history, and support for external programs.
 
-![Shell-icon](/project_photos/shell-icon.png)
+
 
 
 ## Features
