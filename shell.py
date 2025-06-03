@@ -157,6 +157,29 @@ class Terminal:
             print(f"{command}: not found")
         
         return True
+
+    def cmd_help(self, args):
+        """
+        Shows reference
+        """
+        print("Available commands:")
+        print("  cd [folder]   - Changes directory")
+        print("  pwd           - Shows current folder")
+        print("  ls [folder]   - List of files")
+        print("  cat [file]    - Shows up file")
+        print("  mkdir [folder] - Creates new folder")
+        print("  touch [file]  - Creates new file")
+        print("  rm [file]     - Removes file")
+        print("  cp [from] [to] - Copies")
+        print("  echo [text]   - Withdraws text")
+        print("  date          - Shows date")
+        print("  whoami        - Shows user")
+        print("  uptime        - Working hours")
+        print("  history       - History of command")
+        print("  clear         - Cleans display")
+        print("  help          - This reference")
+        print("  exit [code]   - Exit")
+        return True
     
     def run(self):
         """
