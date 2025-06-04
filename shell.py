@@ -215,7 +215,7 @@ class Terminal:
 
     def cmd_ls(self, args):
         """
-        List of files
+        Gives list of files 
         """
         path = args[0] if args else self.current_dir
         
@@ -231,6 +231,23 @@ class Terminal:
                     print(item)
         except Exception as e:
             print(f"ls: Error - {e}")
+        
+        return True
+    
+    def cmd_cat(self, args):
+        """
+        Shows content of file
+        """
+        if not args:
+            print("cat: need name of file")
+            return True
+            
+        for filename in args:
+            try:
+                with open(filename, 'r', encoding='utf-8') as file:
+                    print(file.read())
+            except Exception as e:
+                print(f"cat: {filename} - {e}")
         
         return True
       
