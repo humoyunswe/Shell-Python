@@ -206,6 +206,13 @@ class Terminal:
         
         return True
     
+    def cmd_clear(self, args):
+        """
+        Clearing history
+        """
+        os.system('clear')
+        return True
+    
     def run(self):
         """
         Main loop of terminal
