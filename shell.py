@@ -250,6 +250,27 @@ class Terminal:
                 print(f"cat: {filename} - {e}")
         
         return True
+    
+    def cmd_mkdir(self, args):
+        """
+        Creates file
+        """
+        if not args:
+            print("mkdir: need name of file")
+            return True
+            
+        for dirname in args:
+            full_path = os.path.join(os.getcwd(), dirname)
+            try:
+                if not os.path.isdir(full_path):
+                    os.makedirs(dirname)
+                    print(f"Created file: {dirname}")
+                else:
+                    print(f"Already exists file: {dirname}")
+            except Exception as e:
+                print(f"mkdir: {dirname} - {e}")
+        
+        return True
       
     def run(self):
         """
