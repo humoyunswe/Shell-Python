@@ -212,7 +212,28 @@ class Terminal:
         """
         os.system('clear')
         return True
-    
+
+    def cmd_ls(self, args):
+        """
+        List of files
+        """
+        path = args[0] if args else self.current_dir
+        
+        try:
+            items = os.listdir(path)
+            items.sort()
+            
+            for item in items:
+                full_path = os.path.join(path, item)
+                if os.path.isdir(full_path):
+                    print(f"{item}/") 
+                else:
+                    print(item)
+        except Exception as e:
+            print(f"ls: Error - {e}")
+        
+        return True
+      
     def run(self):
         """
         Main loop of terminal
