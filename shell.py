@@ -256,7 +256,7 @@ class Terminal:
         Creates file
         """
         if not args:
-            print("mkdir: need name of file")
+            print("mkdir: need file name")
             return True
             
         for dirname in args:
