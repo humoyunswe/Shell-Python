@@ -239,7 +239,7 @@ class Terminal:
         Shows content of file
         """
         if not args:
-            print("cat: need name of file")
+            print("cat: need file name")
             return True
             
         for filename in args:
