@@ -271,6 +271,24 @@ class Terminal:
                 print(f"mkdir: {dirname} - {e}")
         
         return True
+    
+    def cmd_touch(self, args):
+        """
+        Creates an empty file
+        """
+        if not args:
+            print("touch: need name of file")
+            return True
+            
+        for filename in args:
+            try:
+                with open(filename, 'a'):
+                    pass  
+                print(f"Created file: {filename}")
+            except Exception as e:
+                print(f"touch: {filename} - {e}")
+        
+        return True
       
     def run(self):
         """
