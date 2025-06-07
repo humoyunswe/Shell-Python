@@ -277,7 +277,7 @@ class Terminal:
         Creates an empty file
         """
         if not args:
-            print("touch: need name of file")
+            print("touch: need file name")
             return True
             
         for filename in args:
