@@ -142,7 +142,7 @@ class Terminal:
         Shows type of command
         """
         if not args:
-            print("type: need name of cammand")
+            print("type: need command name")
             return True
             
         command = args[0]
