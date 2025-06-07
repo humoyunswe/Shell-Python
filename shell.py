@@ -289,6 +289,26 @@ class Terminal:
                 print(f"touch: {filename} - {e}")
         
         return True
+    
+    def cmd_rm(self, args):
+        """
+        Remove file
+        """
+        if not args:
+            print("rm: need file name")
+            return True
+            
+        for filename in args:
+            try:
+                if os.path.isfile(filename):
+                    os.remove(filename)
+                    print(f"Removed file: {filename}")
+                else:
+                    print(f"rm: {filename} not found")
+            except Exception as e:
+                print(f"rm: {filename} - {e}")
+        
+        return True
       
     def run(self):
         """
