@@ -3,6 +3,7 @@ import os
 import subprocess
 import time
 from datetime import datetime
+import shutil
 
 
 class Terminal:
@@ -307,6 +308,22 @@ class Terminal:
                     print(f"rm: {filename} not found")
             except Exception as e:
                 print(f"rm: {filename} - {e}")
+        
+        return True
+    
+    def cmd_cp(self, args):
+        """
+        Copies file
+        """
+        if len(args) < 2:
+            print("cp: need 2 arguments - from - to")
+            return True
+            
+        try:
+            shutil.copy2(args[0], args[1])
+            print(f"Copied: {args[0]} -> {args[1]}")
+        except Exception as e:
+            print(f"cp: Error - {e}")
         
         return True
       
