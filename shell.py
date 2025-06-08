@@ -343,6 +343,19 @@ class Terminal:
         print(user)
         return True
     
+    def cmd_uptime(self, args):
+        """
+        Shows terminals working time
+        """
+        uptime = int(time.time() - self.start_time)
+        hours = uptime // 3600
+        minutes = (uptime % 3600) // 60
+        seconds = uptime % 60
+        
+        print(f"Works: {hours:02d}:{minutes:02d}:{seconds:02d}")
+        print(f"Command executed: {len(self.history)}")
+        return True
+    
     def run(self):
         """
         Main loop of terminal
