@@ -48,43 +48,45 @@ class Terminal:
         parts = command_line.split()
         command = parts[0]
         args = parts[1:] if len(parts) > 1 else []
-        
-        if command == "exit":
-            return self.cmd_exit(args)
-        elif command == "cd":
-            return self.cmd_cd(args)
-        elif command == "pwd":
-            return self.cmd_pwd(args)
-        elif command == "echo":
-            return self.cmd_echo(args)
-        elif command == "type":
-            return self.cmd_type(args)
-        elif command == "help":
-            return self.cmd_help(args)
-        elif command == "history":
-            return self.cmd_history(args)
-        elif command == "clear":
-            return self.cmd_clear(args)
-        elif command == "ls":
-            return self.cmd_ls(args)
-        elif command == "cat":
-            return self.cmd_cat(args)
-        elif command == "mkdir":
-            return self.cmd_mkdir(args)
-        elif command == "touch":
-            return self.cmd_touch(args)
-        elif command == "rm":
-            return self.cmd_rm(args)
-        elif command == "cp":
-            return self.cmd_cp(args)
-        elif command == "date":
-            return self.cmd_date(args)
-        elif command == "whoami":
-            return self.cmd_whoami(args)
-        elif command == "uptime":
-            return self.cmd_uptime(args)
-        else:
-            return self.execute_external(command, args)
+
+        while True:
+            if command == "exit":
+                return self.cmd_exit(args)
+            elif command == "cd":
+                return self.cmd_cd(args)
+            elif command == "pwd":
+                return self.cmd_pwd(args)
+            elif command == "echo":
+                return self.cmd_echo(args)
+            elif command == "type":
+                return self.cmd_type(args)
+            elif command == "help":
+                return self.cmd_help(args)
+            elif command == "history":
+                return self.cmd_history(args)
+            elif command == "clear":
+                return self.cmd_clear(args)
+            elif command == "ls":
+                return self.cmd_ls(args)
+            elif command == "cat":
+                return self.cmd_cat(args)
+            elif command == "mkdir":
+                return self.cmd_mkdir(args)
+            elif command == "touch":
+                return self.cmd_touch(args)
+            elif command == "rm":
+                return self.cmd_rm(args)
+            elif command == "cp":
+                return self.cmd_cp(args)
+            elif command == "date":
+                return self.cmd_date(args)
+            elif command == "whoami":
+                return self.cmd_whoami(args)
+            elif command == "uptime":
+                return self.cmd_uptime(args)
+            else:
+                return True
+            
         
     def cmd_exit(self, args):
         """
@@ -355,6 +357,7 @@ class Terminal:
         print(f"Works: {hours:02d}:{minutes:02d}:{seconds:02d}")
         print(f"Command executed: {len(self.history)}")
         return True
+    
     
     def run(self):
         """
