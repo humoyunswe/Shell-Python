@@ -335,9 +335,14 @@ class Terminal:
         print(now.strftime("%Y-%m-%d %H:%M:%S"))
         return True
     
-   
+    def cmd_whoami(self, args):
+        """
+        Shows user
+        """
+        user = os.getenv('USER', os.getenv('USERNAME', 'unknown'))
+        print(user)
+        return True
     
-      
     def run(self):
         """
         Main loop of terminal
