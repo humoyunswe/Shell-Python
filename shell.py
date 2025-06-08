@@ -326,6 +326,17 @@ class Terminal:
             print(f"cp: Error - {e}")
         
         return True
+    
+    def cmd_date(self, args):
+        """
+        Shows date and time
+        """
+        now = datetime.now()
+        print(now.strftime("%Y-%m-%d %H:%M:%S"))
+        return True
+    
+   
+    
       
     def run(self):
         """
