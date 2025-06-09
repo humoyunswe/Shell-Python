@@ -22,9 +22,11 @@ A lightweight, cross-platform terminal emulator built from scratch in Python. Fe
 ## Quick Start
 
 ### Prerequisites
-
 - Python 3.6 or higher
 - No additional dependencies required
+- Docker installed on your system
+- Git (optional, for cloning the repository)
+
 
 ### Installation
 
@@ -45,6 +47,61 @@ A lightweight, cross-platform terminal emulator built from scratch in Python. Fe
    humoyunswe@terminal:~$ ls
    humoyunswe@terminal:~$ echo "Hello, World!"
    ```
+
+## Docker Usage
+
+### Building the Docker Image
+
+1. Clone the repository (if you haven't already):
+```bash
+git clone <repository-url>
+cd Shell-Python
+```
+
+2. Build the Docker image:
+```bash
+docker build -t python-shell .
+```
+
+### Running the Shell
+
+1. Start the shell in interactive mode:
+```bash
+docker run -it python-shell
+```
+
+### Docker Commands Reference
+
+- List running containers:
+```bash
+docker ps
+```
+
+- List all containers (including stopped):
+```bash
+docker ps -a
+```
+
+- List Docker images:
+```bash
+docker images
+```
+
+- Stop a running container:
+```bash
+docker stop <container_id_or_name>
+```
+
+- Remove a container:
+```bash
+docker rm <container_id_or_name>
+```
+
+- Remove an image:
+```bash
+docker rmi python-shell
+```
+
 
 ## Available Commands
 
