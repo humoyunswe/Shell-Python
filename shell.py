@@ -1,6 +1,5 @@
 import sys
 import os
-import subprocess
 import time
 from datetime import datetime
 import shutil
@@ -87,7 +86,6 @@ class Terminal:
             else:
                 return True
             
-        
     def cmd_exit(self, args):
         """
         Exit from terminal
@@ -357,7 +355,6 @@ class Terminal:
         print(f"Works: {hours:02d}:{minutes:02d}:{seconds:02d}")
         print(f"Command executed: {len(self.history)}")
         return True
-    
     
     def run(self):
         """
