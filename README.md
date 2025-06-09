@@ -15,7 +15,6 @@ A lightweight, cross-platform terminal emulator built from scratch in Python. Fe
 `humoyunswe@terminal:~/Desktop/Projects/Shell-Python$`
 - **Command History** - Track and review all executed commands
 - **Cross-Platform** - Works on Windows, Linux, and macOS
-- **External Programs** - Execute system commands via PATH lookup
 - **File Operations** - Create, read, copy, and delete files/directories
 - **Session Management** - Track uptime and command statistics
 
@@ -186,18 +185,6 @@ humoyunswe@terminal:~$ history
   5  touch file.txt
 ```
 
-## Architecture
-
-The terminal is built with a clean, modular architecture:
-
-```
-Terminal Class
-├── Command Parser
-├── Built-in Commands (17+)
-├── External Program Executor
-├── History Manager
-└── Session Tracker
-```
 
 ### Key Components
 
@@ -205,7 +192,6 @@ Terminal Class
 - **`get_prompt()`** - Generates beautiful command prompt
 - **`execute_command()`** - Parses and routes commands
 - **Built-in Commands** - 17+ implemented as separate methods
-- **External Execution** - Handles system programs via PATH
 
 
 ## Customization
